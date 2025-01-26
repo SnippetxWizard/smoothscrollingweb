@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo">S/W</div>
+
+        <div class="menu">
+            <a href="#" class="active">Home</a>
+            <a href="#">Blog</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </header>
+
+    <div class="parallax">
+        <div id="heading" class="aurora-text">SNIPPET WIZARD</div>
+        <img src="moon.png" alt="Moon" id="moon">
+        <img src="layer.png" alt="Mountain" id="mountain">
+        <img src="grass.png" alt="Grass" id="grass">
+    </div>
+
+    <section>
+        <h2>Smooth Scrolling Website</h2>
+
+        <p>
+            Life is full of challenges, and each obstacle we face presents an opportunity for growth. In times of difficulty, it may seem like the world is against us, but these moments are often the ones that shape us the most. Resilience, or the ability to bounce back from adversity, is a key factor in personal development.
+        </p><br>
+
+        <p>
+            The process of overcoming challenges teaches us valuable lessons about patience, perseverance, and self-awareness. While it may be difficult to see the benefits during tough times, every struggle is a stepping stone toward becoming a stronger, more capable individual.
+        </p><br>
+
+        <p>
+            In this journey of growth, it is important to remember that success is not defined by the absence of problems but by the ability to face and overcome them. Each setback is an opportunity to learn, adapt, and become more resilient. By embracing these challenges with a positive mindset, we can transform obstacles into opportunities for personal growth.
+        </p><br>
+
+        <p>
+            In conclusion, the road to personal growth is not always easy, but it is always rewarding. Through resilience and a willingness to learn from our experiences, we can navigate life’s challenges and emerge stronger, wiser, and more confident in our abilities.
+        </p><br>
+
+        <p>
+            Self-reflection is a crucial part of personal growth. Taking time to evaluate our actions, thoughts, and feelings helps us understand ourselves better and identify areas for improvement. Regular self-reflection allows us to learn from our mistakes and successes, guiding us toward better decision-making in the future.
+        </p><br>
+        <p>
+            True growth happens when we step outside our comfort zones. Trying new things, even when they seem daunting, pushes us to develop new skills and perspectives. Whether it's learning a new hobby, taking on a challenging project, or confronting a fear, stepping out of our comfort zone is often the first step toward meaningful change.
+        </p><br>
+        <p>
+            Failure is not the end; it is often the beginning of success. Every successful person has faced setbacks, but it is their ability to learn from failure that sets them apart. Failure teaches us resilience, problem-solving, and adaptability. Instead of fearing failure, we should embrace it as a valuable learning experience that brings us closer to our goals.
+        </p><br>
+        <p>
+            Life is full of challenges, and each obstacle we face presents an opportunity for growth. In times of difficulty, it may seem like the world is against us, but these moments are often the ones that shape us the most. Resilience, or the ability to bounce back from adversity, is a key factor in personal development.
+        </p><br>
+        <p>
+            In this journey of growth, it is important to remember that success is not defined by the absence of problems but by the ability to face and overcome them. Each setback is an opportunity to learn, adapt, and become more resilient. By embracing these challenges with a positive mindset, we can transform obstacles into opportunities for personal growth.
+        </p><br>
+       
+    </section>
+
+    <script>
+        const heading = document.getElementById("heading");
+        const moon = document.getElementById("moon");
+
+        window.addEventListener("scroll", () => {
+            let value = window.scrollY;
+
+            if (value <= 500) {
+                heading.style.marginTop = value * 2.5 + 'px';
+                moon.style.right = 20 + value * 0.1 + '%';
+            }
+        });
+    </script>
+</body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(to right, #010dff, #ae00ff);
+
+
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 30px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+    }
+
+    #logo {
+        font-size: 2em;
+        color: #fff;
+        user-select: none;
+        font-weight: 600;
+    }
+
+    .menu a {
+        font-size: 0.8em;
+        color: #fff;
+        font-weight: 500;
+        text-decoration: none;
+        margin-left: 20px;
+        letter-spacing: 1px;
+        padding: 6px 15px;
+        border-radius: 8px;
+        transition: 0.5s;
+    }
+
+    .menu a:hover,
+    a.active {
+        color: #333;
+        background: #fff;
+    }
+
+    .parallax {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: url('images/background.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    #heading {
+        position: absolute;
+        top: 20%;
+        font-size: 4em;
+        color: #fff;
+        text-shadow: 2px 4px 5px #232121;
+    }
+
+    .parallax img {
+        position: absolute;
+        width: 100%;
+        pointer-events: none;
+    }
+
+    .parallax img#moon {
+        width: 300px;
+        top: 40%;
+        right: 20%;
+    }
+
+    .parallax img#mountain {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .parallax img#grass {
+        bottom: -40%;
+    }
+
+    section {
+        position: relative;
+        background-color: #020912;
+        padding: 30px 100px;
+    }
+
+    h2 {
+        color: #fff;
+        font-size: 3em;
+        margin-bottom: 25px;
+    }
+
+    p {
+        color: #fff;
+        font-size: 1em;
+        font-weight: 300
+    }
+
+    @media (max-width: 768px) {
+        header {
+            padding: 30px 50px;
+        }
+
+        #heading {
+            font-size: 3em;
+        }
+
+        .parallax img#moon {
+            width: 180px;
+        }
+
+        .parallax img#mountain {
+            bottom: 20%;
+        }
+
+        .parallax img#grass {
+            bottom: -10%;
+        }
+
+        section {
+            margin-top: -60px;
+            padding: 30px 50px;
+        }
+
+        section h2 {
+            font-size: 2em;
+        }
+    }
+
+    @media (max-width: 468px) {
+        header {
+            padding: 30px 50px;
+        }
+
+        #logo {
+            font-size: 1.5em;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        #heading {
+            font-size: 3em;
+        }
+
+        .parallax img#moon {
+            width: 180px;
+            top: 65%;
+            right: 10%;
+        }
+
+        .parallax img#mountain {
+            width: 130%;
+            bottom: 20%;
+        }
+
+        .parallax img#grass {
+            bottom: -5%;
+            width: 130%;
+        }
+
+        section {
+            margin-top: -60px;
+            padding: 30px 50px;
+        }
+
+        section h2 {
+            font-size: 2em;
+        }
+    }
+
+    .aurora-text {
+        font-size: 5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        color: transparent;
+        background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ffcc00);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        animation: auroraAnimation 4s infinite linear;
+    }
+
+    @keyframes auroraAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+</style>
+
+</html>
